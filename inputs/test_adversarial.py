@@ -12,7 +12,14 @@ class AdversarialSecurityTests(unittest.TestCase):
         }
 
     def request(self, path, tenant="red"):
-        return download({"tenant": tenant, "path": path}, self.files)
+        return download(
+            {
+                "request_id": "adversarial-test",
+                "tenant": tenant,
+                "path": path,
+            },
+            self.files,
+        )
 
     def assert_denied_without_leak(self, path):
         response = self.request(path)
@@ -60,7 +67,10 @@ class AdversarialSecurityTests(unittest.TestCase):
         self.assertEqual(response["body"], "SPACE_OK")
 
     def test_absolute_paths_are_blocked(self):
-        for path in ("/exports/red/q1.csv", "C:/exports/red/q1.csv"):
+        for path in (
+            "/exports/red/q1.csv",
+            "C:/exports/red/q1.csv",
+        ):
             with self.subTest(path=path):
                 self.assert_denied_without_leak(path)
 
