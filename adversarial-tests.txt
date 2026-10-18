@@ -1,0 +1,16 @@
+test_absolute_paths_are_blocked (test_adversarial.AdversarialSecurityTests.test_absolute_paths_are_blocked) ... ok
+test_cross_tenant_access_is_blocked (test_adversarial.AdversarialSecurityTests.test_cross_tenant_access_is_blocked) ... ok
+test_double_encoding_is_decoded_only_once (test_adversarial.AdversarialSecurityTests.test_double_encoding_is_decoded_only_once) ... ok
+test_encoded_backslashes_are_blocked (test_adversarial.AdversarialSecurityTests.test_encoded_backslashes_are_blocked) ... ok
+test_encoded_slashes_and_dots_cannot_escape_tenant (test_adversarial.AdversarialSecurityTests.test_encoded_slashes_and_dots_cannot_escape_tenant) ... ok
+test_forbidden_response_never_contains_blue_content (test_adversarial.AdversarialSecurityTests.test_forbidden_response_never_contains_blue_content) ... ok
+test_legitimate_dot_segment_is_allowed (test_adversarial.AdversarialSecurityTests.test_legitimate_dot_segment_is_allowed) ... ok
+test_legitimate_encoded_slashes_still_work (test_adversarial.AdversarialSecurityTests.test_legitimate_encoded_slashes_still_work) ... ok
+test_legitimate_space_in_filename_is_allowed (test_adversarial.AdversarialSecurityTests.test_legitimate_space_in_filename_is_allowed) ... ok
+test_multiple_parent_segments_are_blocked (test_adversarial.AdversarialSecurityTests.test_multiple_parent_segments_are_blocked) ... ok
+test_sibling_tenant_prefix_is_blocked (test_adversarial.AdversarialSecurityTests.test_sibling_tenant_prefix_is_blocked) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+OK

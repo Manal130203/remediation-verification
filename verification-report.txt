@@ -1,0 +1,60 @@
+
+=== 1. Regression tests ===
+test_absolute_path_is_denied (test_download.DownloadSecurityTests.test_absolute_path_is_denied) ... ok
+test_backslash_is_denied (test_download.DownloadSecurityTests.test_backslash_is_denied) ... ok
+test_blue_file (test_download.DownloadSecurityTests.test_blue_file) ... ok
+test_denied_response_does_not_leak_file_content (test_download.DownloadSecurityTests.test_denied_response_does_not_leak_file_content) ... ok
+test_dot_segment_is_normalized (test_download.DownloadSecurityTests.test_dot_segment_is_normalized) ... ok
+test_double_encoded_traversal_is_not_decoded_twice (test_download.DownloadSecurityTests.test_double_encoded_traversal_is_not_decoded_twice) ... ok
+test_encoded_backslash_is_denied (test_download.DownloadSecurityTests.test_encoded_backslash_is_denied) ... ok
+test_encoded_slash_cannot_bypass_tenant_boundary (test_download.DownloadSecurityTests.test_encoded_slash_cannot_bypass_tenant_boundary) ... ok
+test_encoded_space (test_download.DownloadSecurityTests.test_encoded_space) ... ok
+test_encoded_traversal_is_denied (test_download.DownloadSecurityTests.test_encoded_traversal_is_denied) ... ok
+test_missing_file_returns_404 (test_download.DownloadSecurityTests.test_missing_file_returns_404) ... ok
+test_multiple_parent_segments_are_denied (test_download.DownloadSecurityTests.test_multiple_parent_segments_are_denied) ... ok
+test_other_tenant_is_denied (test_download.DownloadSecurityTests.test_other_tenant_is_denied) ... ok
+test_private_file_is_denied (test_download.DownloadSecurityTests.test_private_file_is_denied) ... ok
+test_red_file (test_download.DownloadSecurityTests.test_red_file) ... ok
+test_sibling_prefix_is_denied (test_download.DownloadSecurityTests.test_sibling_prefix_is_denied) ... ok
+test_unknown_tenant_is_denied (test_download.DownloadSecurityTests.test_unknown_tenant_is_denied) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.004s
+
+OK
+
+=== 2. Adversarial security tests ===
+test_absolute_paths_are_blocked (test_adversarial.AdversarialSecurityTests.test_absolute_paths_are_blocked) ... ok
+test_cross_tenant_access_is_blocked (test_adversarial.AdversarialSecurityTests.test_cross_tenant_access_is_blocked) ... ok
+test_double_encoding_is_decoded_only_once (test_adversarial.AdversarialSecurityTests.test_double_encoding_is_decoded_only_once) ... ok
+test_encoded_backslashes_are_blocked (test_adversarial.AdversarialSecurityTests.test_encoded_backslashes_are_blocked) ... ok
+test_encoded_slashes_and_dots_cannot_escape_tenant (test_adversarial.AdversarialSecurityTests.test_encoded_slashes_and_dots_cannot_escape_tenant) ... ok
+test_forbidden_response_never_contains_blue_content (test_adversarial.AdversarialSecurityTests.test_forbidden_response_never_contains_blue_content) ... ok
+test_legitimate_dot_segment_is_allowed (test_adversarial.AdversarialSecurityTests.test_legitimate_dot_segment_is_allowed) ... ok
+test_legitimate_encoded_slashes_still_work (test_adversarial.AdversarialSecurityTests.test_legitimate_encoded_slashes_still_work) ... ok
+test_legitimate_space_in_filename_is_allowed (test_adversarial.AdversarialSecurityTests.test_legitimate_space_in_filename_is_allowed) ... ok
+test_multiple_parent_segments_are_blocked (test_adversarial.AdversarialSecurityTests.test_multiple_parent_segments_are_blocked) ... ok
+test_sibling_tenant_prefix_is_blocked (test_adversarial.AdversarialSecurityTests.test_sibling_tenant_prefix_is_blocked) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.004s
+
+OK
+
+=== 3. Original vs fixed comparison ===
+
+Sibling-prefix attack
+  Original status: 200
+  Fixed status:    403
+  Fix blocks case: PASS
+  Original exposes content: YES
+
+Encoded traversal attack
+  Original status: 200
+  Fixed status:    403
+  Fix blocks case: PASS
+  Original exposes content: YES
+
+OVERALL: PASS — both known vulnerabilities reproduced and blocked.
+
+ALL SECURITY CHECKS PASSED.

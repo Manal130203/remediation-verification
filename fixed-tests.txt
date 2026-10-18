@@ -1,0 +1,22 @@
+test_absolute_path_is_denied (test_download.DownloadSecurityTests.test_absolute_path_is_denied) ... ok
+test_backslash_is_denied (test_download.DownloadSecurityTests.test_backslash_is_denied) ... ok
+test_blue_file (test_download.DownloadSecurityTests.test_blue_file) ... ok
+test_denied_response_does_not_leak_file_content (test_download.DownloadSecurityTests.test_denied_response_does_not_leak_file_content) ... ok
+test_dot_segment_is_normalized (test_download.DownloadSecurityTests.test_dot_segment_is_normalized) ... ok
+test_double_encoded_traversal_is_not_decoded_twice (test_download.DownloadSecurityTests.test_double_encoded_traversal_is_not_decoded_twice) ... ok
+test_encoded_backslash_is_denied (test_download.DownloadSecurityTests.test_encoded_backslash_is_denied) ... ok
+test_encoded_slash_cannot_bypass_tenant_boundary (test_download.DownloadSecurityTests.test_encoded_slash_cannot_bypass_tenant_boundary) ... ok
+test_encoded_space (test_download.DownloadSecurityTests.test_encoded_space) ... ok
+test_encoded_traversal_is_denied (test_download.DownloadSecurityTests.test_encoded_traversal_is_denied) ... ok
+test_missing_file_returns_404 (test_download.DownloadSecurityTests.test_missing_file_returns_404) ... ok
+test_multiple_parent_segments_are_denied (test_download.DownloadSecurityTests.test_multiple_parent_segments_are_denied) ... ok
+test_other_tenant_is_denied (test_download.DownloadSecurityTests.test_other_tenant_is_denied) ... ok
+test_private_file_is_denied (test_download.DownloadSecurityTests.test_private_file_is_denied) ... ok
+test_red_file (test_download.DownloadSecurityTests.test_red_file) ... ok
+test_sibling_prefix_is_denied (test_download.DownloadSecurityTests.test_sibling_prefix_is_denied) ... ok
+test_unknown_tenant_is_denied (test_download.DownloadSecurityTests.test_unknown_tenant_is_denied) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.002s
+
+OK
